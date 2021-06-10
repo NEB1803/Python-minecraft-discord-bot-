@@ -1,0 +1,5 @@
+discord.py
+discord.ext
+mcstatus
+os
+dotenv
