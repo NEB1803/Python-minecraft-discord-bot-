@@ -11,20 +11,7 @@ async def on_ready():
     print ( 'We have logged in as {0.user}'.format ( client ) )
 
     await client.change_presence (
-        activity = discord.Activity ( type = discord.ActivityType.playing, name = "on play.pixel-heim.com" ) )
-
-
-@client.event
-async def on_member_join(member):
-    channel = await client.fetch_channel ( 834516102649741349 )
-    print ( "                {0} joined the server".format ( member.name ) )
-    welcome = discord.Embed (
-        title = '**We hope to meet you at play.pixel-heim.com**',
-        description = 'Please check <#834687920211755049> and <#836172359446298674> before checking out the other channels to meet other players!',
-        colour = discord.Colour.from_rgb ( 255, 0, 0 )
-    )
-    welcome.set_image ( url = 'https://i.imgur.com/AqxpDD2.png' )
-    await channel.send ( "**Welcome to PixelHeim {0} !**".format ( member.mention ), embed = welcome )
+        activity = discord.Activity ( type = discord.ActivityType.playing, name = "on " ) )
 
 
 @client.event
@@ -83,7 +70,7 @@ async def on_message(message):
         await message.add_reaction ( "a:checkmark:848898022921732166" )
         ip = discord.Embed (
             title = '**IP**',
-            description = '**play.pixel-heim.com**',
+            description = '**MINIGAME SERVER**\n168.119.79.98:15182\n**LEGENDS MODDED SERVER**\n157.90.130.141:22217',
             colour = discord.Colour.from_rgb ( 255, 0, 0 )
         )
         ip.set_thumbnail ( url = "https://i.imgur.com/oPdS1DB.png" )
