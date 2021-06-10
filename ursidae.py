@@ -47,7 +47,7 @@ async def on_message(message):
             print ( ".players command was used by {0} (Server was offline)".format ( message.author.name ) )
             temp1 = 0
         if temp1 == 1:
-            await message.channel.send ("There are {0} Players currently playing on PixelHeim".format ( status.players.online ) )
+            await message.channel.send ("There are {0} Players currently playing on URSIDAE LEGENDS SERVER".format ( status.players.online ) )
             print ( ".players command was used by {0} ({1} Players were online)".format ( message.author.name,status.players.online ) )
 
     if ".status" in message.content:
@@ -64,7 +64,7 @@ async def on_message(message):
             print ( ".status command was used by {0} (Server was online)".format ( message.author.name ) )
 
 
-@tasks.loop ( minutes = 2 )
+@tasks.loop ( minutes = 5 )
 async def send():
     stagechannel = client.get_channel ( 852475276701204500 )
     try:
@@ -86,4 +86,4 @@ async def before():
 
 send.start ()
 
-client.run ( "Nzc0MjUzNzY1OTU1NTUxMjMz.X6VGAg.3TslExeOw_qIGlq9j_jWU6UGWkE" )
+client.run ( "Nzc0MjUzNzY1OTU1NTUxMjMz.X6VGAg.xdiq6AfrjyEnoGqL9HGoUZVFo-o" )
