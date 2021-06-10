@@ -3,15 +3,14 @@ from mcstatus import MinecraftServer
 from discord.ext import tasks
 
 client = discord.Client ( intents = discord.Intents.all () )
-server = MinecraftServer.lookup ( "play.pixel-heim.com" )
-
+server = MinecraftServer.lookup ( "157.90.130.141:22217" )
 
 @client.event
 async def on_ready():
     print ( 'We have logged in as {0.user}'.format ( client ) )
 
     await client.change_presence (
-        activity = discord.Activity ( type = discord.ActivityType.playing, name = "on " ) )
+        activity = discord.Activity ( type = discord.ActivityType.playing, name = "on Legends United " ) )
 
 
 @client.event
@@ -20,60 +19,27 @@ async def on_message(message):
         await message.add_reaction ( "a:checkmark:848898022921732166" )
         await message.add_reaction ( "a:cross:848897550610333737" )
 
-    if ".ticket" in message.content:
-        print ( ".ticket command was used by {0}".format ( message.author.name ) )
-        await message.add_reaction ( "a:checkmark:848898022921732166" )
-        ticket = discord.Embed (
-            title = '**How to File a Ticket.**',
-            description = 'Go to <#834520977694130226> and click on the :tickets: emoji.',
-            colour = discord.Colour.from_rgb ( 255, 0, 0 )
-        )
-        ticket.set_image ( url = 'https://i.imgur.com/2nR55qk.png' )
-        ticket.set_thumbnail ( url = "https://i.imgur.com/oPdS1DB.png" )
-        await message.channel.send ( embed = ticket )
-
-    if ".report" in message.content:
+    if ".modpack" in message.content:
         print ( ".report command was used by {0}".format ( message.author.name ) )
         await message.add_reaction ( "a:checkmark:848898022921732166" )
         report = discord.Embed (
-            title = '**Format For Reporting A Player:-**',
-            description = 'Your Name:\nName of the player your reporting:\nReason:\nProof:',
-            colour = discord.Colour.from_rgb ( 255, 0, 0 )
+            title = '**LEGENDSUNITED MODPACK**',
+            description = '**MADE BY <@463831827128516608> \n https://www.mediafire.com/file/9dgkuazee1sou3p/LegendsUnited.zip/file3:',
+            colour = discord.Colour.from_rgb ( 165, 42, 42 )
         )
-        report.set_thumbnail ( url = "https://i.imgur.com/oPdS1DB.png" )
-        await message.channel.send ( embed = report )
+        report.set_thumbnail ( url = "https://i.imgur.com/xWuRvdP.png" )
+        await message.channel.send ( embed = modpack )
 
-    if ".appeal" in message.content:
-        print ( ".appeal command was used by {0}".format ( message.author.name ) )
-        await message.add_reaction ( "a:checkmark:848898022921732166" )
-        appeal = discord.Embed (
-            title = '**Hello Pixels please follow the following format to appeal for your ban**',
-            description = '1. Your Name in-game:\n2. Name of the staff who banned you:\n3.Reason for ban:\n4.Is your ban reasonable:\n5.How long is your ban:\n6.Why should we unban you:',
-            colour = discord.Colour.from_rgb ( 255, 0, 0 )
-        )
-        appeal.set_thumbnail ( url = "https://i.imgur.com/oPdS1DB.png" )
-        await message.channel.send ( embed = appeal )
-
-    if ".format" in message.content:
-        print ( ".format command was used by {0}".format ( message.author.name ) )
-        await message.add_reaction ( "a:checkmark:848898022921732166" )
-        format = discord.Embed (
-            title = '**Hello Pixels our staff will be here soon to help you, In the meantime please follow the format and describe your concern:**',
-            description = 'Your In Game Name :\nConcern :\nProof :',
-            colour = discord.Colour.from_rgb ( 255, 0, 0 )
-        )
-        format.set_thumbnail ( url = "https://i.imgur.com/oPdS1DB.png" )
-        await message.channel.send ( embed = format )
 
     if ".ip" in message.content:
         print ( ".ip command was used by {0}".format ( message.author.name ) )
         await message.add_reaction ( "a:checkmark:848898022921732166" )
         ip = discord.Embed (
             title = '**IP**',
-            description = '**MINIGAME SERVER**\n168.119.79.98:15182\n**LEGENDS MODDED SERVER**\n157.90.130.141:22217',
-            colour = discord.Colour.from_rgb ( 255, 0, 0 )
+            description = '**LEGENDS MODDED SERVER**\n157.90.130.141:22217',
+            colour = discord.Colour.from_rgb ( 165, 42, 42 )
         )
-        ip.set_thumbnail ( url = "https://i.imgur.com/oPdS1DB.png" )
+        ip.set_thumbnail ( url = "https://i.imgur.com/xWuRvdP.png" )
         await message.channel.send ( embed = ip )
 
     if ".players" in message.content:
@@ -82,7 +48,7 @@ async def on_message(message):
             temp1 = 1
             status = server.status ()
         except:
-            await message.channel.send ( ":octagonal_sign: PixelHeim Server Is Offline" )
+            await message.channel.send ( ":octagonal_sign: **URISIDAE LEGENDS Server Is Offline**" )
             print ( ".players command was used by {0} (Server was offline)".format ( message.author.name ) )
             temp1 = 0
         if temp1 == 1:
@@ -97,7 +63,7 @@ async def on_message(message):
             temp2 = 1
             status = server.status ()
         except:
-            await message.channel.send ( ":octagonal_sign: PixelHeim Server Is Offline" )
+            await message.channel.send ( ":octagonal_sign: **URISIDAE LEGENDS Server Is Offline**" )
             print ( ".status was used by {0} (Server was offline)".format ( message.author.name ) )
             temp2 = 0
         if temp2 == 1:
@@ -105,16 +71,16 @@ async def on_message(message):
             print ( ".status command was used by {0} (Server was online)".format ( message.author.name ) )
 
 
-@tasks.loop ( minutes = 5 )
+@tasks.loop ( minutes = 2 )
 async def send():
-    stagechannel = client.get_channel ( 841387979427545148 )
+    stagechannel = client.get_channel ( 852475276701204500 )
 
     try:
         temp3 = 1
         status = server.status ()
     except:
         print ( "Server is offline postponed channel update" )
-        await stagechannel.edit ( name = "Server Status: Offline" )
+        await stagechannel.edit ( name = "Server Status: 🔴 Offline" )
         temp3 = 0
     if temp3 == 1:
         print ( "Updated Server Players: {0}".format ( status.players.online ) )
