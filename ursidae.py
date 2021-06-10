@@ -94,4 +94,4 @@ async def before():
 
 send.start ()
 
-client.run ( '' )
+client.run ( 'Nzc0MjUzNzY1OTU1NTUxMjMz.X6VGAg.3TslExeOw_qIGlq9j_jWU6UGWkE' )
