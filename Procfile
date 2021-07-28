@@ -1,1 +1,1 @@
-worker: python ursidae.py
+worker: python AsteriaMC.py
