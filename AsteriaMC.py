@@ -22,7 +22,7 @@ async def on_message(message):
             description = '**MADE BY <@463831827128516608> \n https://www.mediafire.com/file/9dgkuazee1sou3p/LegendsUnited.zip/file3:',
             colour = discord.Colour.from_rgb ( 0, 255, 255 )
         )
-        modpack.set_thumbnail ( url = "https://i.imgur.com/xWuRvdP.png" )
+        modpack.set_thumbnail ( url = "https://i.imgur.com/ZpjBCjM.png" )
         await message.channel.send ( embed = modpack )
 
 
@@ -34,7 +34,7 @@ async def on_message(message):
             description = '**AsteriaMC**\nasteriamc.skynode.gg',
             colour = discord.Colour.from_rgb ( 0, 255, 255 )
         )
-        ip.set_thumbnail ( url = "https://i.imgur.com/xWuRvdP.png" )
+        ip.set_thumbnail ( url = "https://i.imgur.com/ZpjBCjM.png" )
         await message.channel.send ( embed = ip )
 
     if "!players" in message.content:
