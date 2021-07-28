@@ -2,7 +2,7 @@ import discord
 from mcstatus import MinecraftServer
 from discord.ext import tasks
 client = discord.Client ( intents = discord.Intents.all () )
-server = MinecraftServer.lookup ( "139.99.125..7:25610" )
+server = MinecraftServer.lookup ( "139.99.125.7:25610" )
 
 @client.event
 async def on_ready():
