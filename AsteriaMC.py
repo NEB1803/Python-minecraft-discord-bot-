@@ -20,7 +20,7 @@ async def on_message(message):
         modpack = discord.Embed (
             title = '**LEGENDSUNITED MODPACK**',
             description = '**MADE BY <@463831827128516608> \n https://www.mediafire.com/file/9dgkuazee1sou3p/LegendsUnited.zip/file3:',
-            colour = discord.Colour.from_rgb ( 165, 42, 42 )
+            colour = discord.Colour.from_rgb ( 0, 255, 255 )
         )
         modpack.set_thumbnail ( url = "https://i.imgur.com/xWuRvdP.png" )
         await message.channel.send ( embed = modpack )
@@ -32,7 +32,7 @@ async def on_message(message):
         ip = discord.Embed (
             title = '**IP**',
             description = '**AsteriaMC**\nasteriamc.skynode.gg',
-            colour = discord.Colour.from_rgb ( 165, 42, 42 )
+            colour = discord.Colour.from_rgb ( 0, 255, 255 )
         )
         ip.set_thumbnail ( url = "https://i.imgur.com/xWuRvdP.png" )
         await message.channel.send ( embed = ip )
