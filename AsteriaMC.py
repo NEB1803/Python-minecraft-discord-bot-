@@ -2,7 +2,7 @@ import discord
 from mcstatus import MinecraftServer
 from discord.ext import tasks
 client = discord.Client ( intents = discord.Intents.all () )
-server = MinecraftServer.lookup ( "157.90.130.141:22217" )
+server = MinecraftServer.lookup ( "139.99.125..7:25610" )
 
 @client.event
 async def on_ready():
@@ -26,29 +26,29 @@ async def on_message(message):
         await message.channel.send ( embed = modpack )
 
 
-    if ".ip" in message.content:
-        print ( ".ip command was used by {0}".format ( message.author.name ) )
+    if "!ip" in message.content:
+        print ( "!ip command was used by {0}".format ( message.author.name ) )
         await message.add_reaction ( "✅" )
         ip = discord.Embed (
             title = '**IP**',
-            description = '**LEGENDS MODDED SERVER**\n157.90.130.141:22217',
+            description = '**AsteriaMC**\nasteriamc.skynode.gg',
             colour = discord.Colour.from_rgb ( 165, 42, 42 )
         )
         ip.set_thumbnail ( url = "https://i.imgur.com/xWuRvdP.png" )
         await message.channel.send ( embed = ip )
 
-    if ".players" in message.content:
+    if "!players" in message.content:
 
         try:
             temp1 = 1
             status = server.status ()
         except:
-            await message.channel.send ( ":octagonal_sign: **URSIDAE LEGENDS Server Is Offline**" )
+            await message.channel.send ( ":octagonal_sign: **AsteriaMC Server Is Offline**" )
             print ( ".players command was used by {0} (Server was offline)".format ( message.author.name ) )
             temp1 = 0
         if temp1 == 1:
-            await message.channel.send ("There are {0} Players currently playing on URSIDAE LEGENDS SERVER".format ( status.players.online ) )
-            print ( ".players command was used by {0} ({1} Players were online)".format ( message.author.name,status.players.online ) )
+            await message.channel.send ("**There are {0} Players currently playing on AsteriaMC SERVER**".format ( status.players.online ) )
+            print ( "!players command was used by {0} ({1} Players were online)".format ( message.author.name,status.players.online ) )
 
     if ".status" in message.content:
 
@@ -56,11 +56,11 @@ async def on_message(message):
             temp2 = 1
             status = server.status ()
         except:
-            await message.channel.send ( ":octagonal_sign: **URSIDAE LEGENDS Server Is Offline**" )
+            await message.channel.send ( ":octagonal_sign: **AsteriaMC Server Is Offline**" )
             print ( ".status was used by {0} (Server was offline)".format ( message.author.name ) )
             temp2 = 0
         if temp2 == 1:
-            await message.channel.send ( ":white_check_mark: PixelHeim Server Is Online" )
+            await message.channel.send ( ":white_check_mark: **AsteriaMC Server Is Online**" )
             print ( ".status command was used by {0} (Server was online)".format ( message.author.name ) )
 
 
