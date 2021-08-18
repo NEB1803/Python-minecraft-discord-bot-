@@ -1,1 +1,1 @@
-worker: python AsteriaMC.py
+worker: python Bot.py
